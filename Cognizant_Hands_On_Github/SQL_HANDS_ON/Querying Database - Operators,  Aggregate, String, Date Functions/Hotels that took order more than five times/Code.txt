@@ -1,0 +1,7 @@
+     select h.hotel_id, h.hotel_name,
+     COUNT(o.order_id) AS NO_OF_ORDERS
+     from hotel_details h
+     JOIN orders o on o.hotel_id = h.hotel_id
+     GROUP BY h.hotel_id
+     HAVING NO_OF_ORDERS > 5
+     ORDER BY h.hotel_id ASC;

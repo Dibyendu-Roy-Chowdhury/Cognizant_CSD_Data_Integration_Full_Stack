@@ -1,0 +1,5 @@
+  select DISTINCT hotel_details.hotel_id, hotel_details.hotel_name, hotel_details.rating
+     from hotel_details, orders
+     where hotel_details.hotel_id = orders.hotel_id
+     and MONTH(orders.order_date)=7
+     ORDER BY hotel_details.hotel_id ASC;
